@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Free Food at Georgia Tech</title>
+    <link rel="stylesheet" href="bower_components/pure/pure-min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/geofire/dist/geofire.js"></script>
+    <script src="bower_components/geofire/dist/geofire.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.25.6/js/jquery.tablesorter.min.js"></script>
+    <script src="scripts.js"></script>
+</head>
+<body onload="getLocation()">
+
+<div class = "User inputs" align="center">
+<!--<input type="text" size="40" id="organization" placeholder="What organization are you from?"-->
+       <!--onfocus="this.placeholder = ''" onblur="this.placeholder = 'What organization are you from?'"><br>-->
+
+<!--<input type="text" size="40" id="food" placeholder="What food do you have?"-->
+       <!--onfocus="this.placeholder = ''" onblur="this.placeholder = 'What food do you have?'"><br>-->
+
+<!--<input type="text" size="40" id="event" placeholder="What event are you putting on?"-->
+       <!--onfocus="this.placeholder = ''" onblur="this.placeholder = 'What event are you putting on?'"><br> <br>-->
+
+<!--<button onclick="storeLocation()" class="pure-button pure-button-primary"> Submit</button>-->
+<!--<br> <br>-->
+
+    <form class="pure-form pure-form-aligned">
+        <fieldset>
+            <div class="pure-control-group">
+                <label for="organization">Organization</label>
+                <input id="organization" type="text" placeholder="Organization" required>
+            </div>
+
+            <div class="pure-control-group">
+                <label for="food">Food</label>
+                <input id="food" type="text" placeholder="Food" required>
+            </div>
+
+            <div class="pure-control-group">
+                <label for="event">Event </label>
+                <input id="event" type="text" placeholder="Event" required>
+            </div>
+
+        </fieldset>
+    </form>
+    <button onclick="storeLocation()" class="pure-button pure-button-primary"> <i class ="fa fa-check"></i> Submit</button>
+</div>
+
+
+
+<div class="Events with food!" style="overflow-x: auto;">
+    <table id="events" class="tablesorter pure-table pure-table-bordered" >
+        <thead>
+        <tr>
+            <th>Event</th>
+            <th>Food available</th>
+            <th>Organized by</th>
+            <th>Distance (in km)</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+
+</html>
